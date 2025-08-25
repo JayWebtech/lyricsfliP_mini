@@ -1,13 +1,27 @@
-import "./theme.css";
+import "./globals.css";
+// import "./theme.css";
 import "@coinbase/onchainkit/styles.css";
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
 import { Providers } from "./providers";
+import Navbar, { MobileNav } from "./components/navbar";
+import { Geist, Geist_Mono } from 'next/font/google';
 
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -42,8 +56,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-background">
-        <Providers>{children}</Providers>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+        <Providers>
+          <Navbar />
+          {children}
+          <MobileNav />
+          </Providers>
       </body>
     </html>
   );
