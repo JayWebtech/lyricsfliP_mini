@@ -25,36 +25,36 @@ const gameOptions: GameOption[] = [
     bgColor: 'bg-[#EDE9F2]',
     borderColor: 'border-[#E0D9E8]',
   },
-  {
-    id: 'single-player',
-    title: 'Wager (Single Player)',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    icon: '/wagersingle.svg',
-    color: 'bg-[#3F8AB6]',
-    bgPattern: '/card2line.svg',
-    bgColor: 'bg-[#E1EDF4]',
-    borderColor: 'border-[#D2E4EF]',
-  },
-  {
-    id: 'multi-player',
-    title: 'Wager (Multi Player)',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    icon: '/wagermulti.svg',
-    color: 'bg-[#DF7A16]',
-    bgPattern: '/card3line.svg',
-    bgColor: 'bg-[#F6EDE5]',
-    borderColor: 'border-[#EFE0D2]',
-  },
-  {
-    id: 'challenge',
-    title: 'Join a Challenge',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    icon: '/join.svg',
-    color: 'bg-[#7D1D3F]',
-    bgPattern: '/card4line.svg',
-    bgColor: 'bg-[#F2E6EA]',
-    borderColor: 'border-[#EAD7DD]',
-  },
+  // {
+  //   id: 'single-player',
+  //   title: 'Wager (Single Player)',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //   icon: '/wagersingle.svg',
+  //   color: 'bg-[#3F8AB6]',
+  //   bgPattern: '/card2line.svg',
+  //   bgColor: 'bg-[#E1EDF4]',
+  //   borderColor: 'border-[#D2E4EF]',
+  // },
+  // {
+  //   id: 'multi-player',
+  //   title: 'Wager (Multi Player)',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //   icon: '/wagermulti.svg',
+  //   color: 'bg-[#DF7A16]',
+  //   bgPattern: '/card3line.svg',
+  //   bgColor: 'bg-[#F6EDE5]',
+  //   borderColor: 'border-[#EFE0D2]',
+  // },
+  // {
+  //   id: 'challenge',
+  //   title: 'Join a Challenge',
+  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //   icon: '/join.svg',
+  //   color: 'bg-[#7D1D3F]',
+  //   bgPattern: '/card4line.svg',
+  //   bgColor: 'bg-[#F2E6EA]',
+  //   borderColor: 'border-[#EAD7DD]',
+  // },
 ];
 
 interface GameOptionsProps {
@@ -72,7 +72,7 @@ export function GameOptions({ onSelectGame }: GameOptionsProps) {
   };
 
   return (
-    <div className="grid gap-5 sm:grid-cols-2 w-full">
+    <div className="grid gap-5 w-full grid-cols-1 place-items-center">
       {gameOptions.map((game) => (
         <GameCard
           key={game.id}
