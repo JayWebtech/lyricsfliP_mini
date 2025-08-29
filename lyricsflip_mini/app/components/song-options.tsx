@@ -42,8 +42,20 @@ export function SongOptions({
             className={buttonClasses}
             disabled={selectedOption !== null}
           >
-            <h3 className="font-medium text-gray-900">{option.title}</h3>
-            <p className="text-sm text-gray-600">{option.artist}</p>
+            <div className="flex items-start gap-2">
+              {(isCorrect || isSelected) && (
+                <span
+                  aria-hidden
+                  className={`mt-0.5 inline-flex w-5 h-5 items-center justify-center rounded-full border ${isCorrect ? 'border-green-500 text-green-600' : 'border-red-500 text-red-600'}`}
+                >
+                  {isCorrect ? '✓' : '✕'}
+                </span>
+              )}
+              <div>
+                <h3 className="font-medium text-gray-900">{option.title}</h3>
+                <p className="text-sm text-gray-600">{option.artist}</p>
+              </div>
+            </div>
           </button>
         );
       })}
